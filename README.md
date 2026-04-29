@@ -3,7 +3,7 @@
 ## About
 * **Home**: Main artists and their skills
 * **Gallery**: Their images and favorite lines from their music 
-* **Music **: Top songs from streaming platforms like Spotify, YouTube and more
+* **Music**: Top songs from streaming platforms like Spotify, YouTube and more
 
 ## Tech
 * PHP
