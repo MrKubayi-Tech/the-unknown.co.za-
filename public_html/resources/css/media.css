@@ -1,0 +1,83 @@
+/* FOR HOME PAGE*/
+
+@media (min-width: 530px) and (max-width: 1000px), (min-width: 401px) and (max-width: 529px), (max-width: 400px){
+    section#main_artists.main_artists {
+        flex-direction:column;
+        align-items: center;
+    }
+    .motto {
+        margin: 0 10px 80px 10px;
+    }
+    
+}
+
+@media (min-width: 530px) and (max-width: 1000px){
+    .artist_container {
+        width: 200px;
+        margin: 40px 20px 20px 20px;
+    }
+    
+    .stage_name{font-size: 18px;}
+    .icon_p li{font-size: 14px;}
+    .icon_p img {width: 25px; height: 25px;}
+}
+
+@media (max-width: 610px){
+    .song{
+        width: 90%;
+    }
+    iframe {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16/9;
+    }
+    #unknown {
+        font-size: 22px;
+    }
+    .brand h4{
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 401px) and (max-width: 529px),(max-width: 400px) {
+    #body_container {
+        height: 200px;
+    }
+    #links_container li a{
+        margin: 0 1px;
+    }
+    .links{
+        flex-direction: column;
+    }
+    #p_div p {
+        text-align: justify;
+    }
+}
+
+@media (max-width: 400px){
+    .media_query {
+        flex-direction:column;
+        align-items: center;
+    }
+}
+
+/* For Gallery*/
+
+@media (min-width: 455px) and (max-width: 935px), (max-width: 454px){
+    #artists, .gang_pic {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 454px){
+
+    .art p, .art img {
+        width: initial;
+    }
+    #gallery, #koketso, #rodney, .art, #koketso div, #rodney div{
+        width: 100%;
+    }
+    .art p, .art img {
+        width: 90%;
+    }
+}

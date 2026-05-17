@@ -1,0 +1,379 @@
+body {
+    font-family: 'Open Sans',sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+/*For Authentication*/
+
+
+#login.hide, #login_tab.hide_tab {
+    display: none;
+}
+
+#signup, #singup_tab{
+    display: none;
+}
+
+#signup.show, #singup_tab.show_tab {
+    display: inline;
+}
+
+form, .form_container p,  .submit_btn {
+    width: 228px;
+}
+
+.input{
+    background-color: #d8d8d8cb;
+    border-radius: 6px;
+    width: 212px;
+    border: 0;
+    padding: 2px 8px;
+    height: 20px;
+    margin-bottom: 8px;
+}
+
+#login div {
+    height: 38vh;
+}
+
+#login p{
+    margin: 8px 0;
+}
+
+#signup .form_container {
+    margin-bottom: 100px;
+}
+
+.form_container p {
+    display: flex;
+    justify-content: space-between;
+}
+
+#login_btn, #signup_btn {
+    background-color: transparent;
+    border: 0;
+    font-weight: bold;
+}
+
+#signup_btn, #l_submit {
+    color: #ff008c;
+}
+
+#login_btn, #s_submit {
+    color: #00ff15;
+}
+
+#login_btn, #s_submit, #signup_btn, #l_submit {
+    transition-duration: 1s;
+}
+
+#login_btn:hover, #signup_btn:hover {
+    color: black;
+}
+
+.label {
+    font-size: 11px;
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+.submit_btn {
+    background-color: black;
+    border-radius: 8px;
+    border: 0;
+    height: 30px;
+    font-weight: bold;
+}
+
+#s_submit:hover {
+    background-color: #00ff15;
+    color: black;
+}
+
+#l_submit:hover {
+    background-color: #ff008c;
+    color: black;
+}
+
+/*----------------------------------------------------------------------*/
+
+#body_container{
+    height: 300px;
+    color: white;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1, h4 {margin: 0;}
+
+h1 {font-size: 40px;}
+
+h4 {font-weight: normal;}
+
+/* Shared attributes only*/
+#main_artists, .media_query, .motto, #body_container, footer, #links_container, #artists, .grp_two, .gang_pic, .links, .link_div , .music, .links, .form_container, #verify_email{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.link_div h4, .link_div h4 a, a, .stage_name, .song_title, .art p, .art_name{
+    font-weight: bold;
+}
+#p_div, footer,#body_container, .gang, .grp_two, .footer_p {text-align: center;}
+#body_container, footer {background-color: black;}
+
+/*---------------------------------------------------------*/
+
+ul {margin-top: 5px;}
+
+li, #socials li a {
+    font-size: 13px;
+    color: rgb(221, 221, 221);
+}
+
+#p_div {
+    width: 800px;
+}
+
+nav {margin: 20px 0;}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 25px 20px 2px 20px;
+    margin: 0 20px;
+}
+
+.motto {
+    margin-bottom: 80px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;left: 0;right: 0;
+    font-size: 12px;
+}
+
+#links_container {
+    list-style: none;
+    padding: 0;
+}
+
+#links_container li{
+    transition-duration: 1s;
+    margin: 2px 5px;
+    padding: 2px 0;
+    border-radius: 10px;
+    font-size: 10px;
+}
+
+#links_container li:hover{
+    filter: invert(1);
+    background-color: rgb(0, 0, 0);
+}
+
+.footer_p {
+    color: rgb(196, 196, 196);
+}
+
+/* FOR HOME PAGE */
+
+.stage_name{
+    margin: 3px 0 0 4px;
+    font-size: 14px;
+    color: white;
+}
+
+.artist_container {
+    background-color: rgb(0, 0, 0);
+    width: 160px;
+    border-radius: 5px;
+    margin: 40px 10px 20px 10px;
+    padding: 10px;
+}
+
+#box_one {box-shadow: 0 0 10px rgb(234, 0, 255);}
+
+#box_two {box-shadow: 0 0 10px rgb(0, 217, 255);}
+
+#box_three {box-shadow: 0 0 10px rgb(255, 238, 0);}
+
+#box_four {box-shadow: 0 0 10px rgb(25, 0, 255);}
+
+#box_five {box-shadow: 0 0 10px rgb(255, 0, 0);}
+
+.icon_p {
+    display: flex;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+#socials li a {
+    padding: 0;
+    margin: 0;
+    transition-duration: 1s;
+}
+
+#socials li a:hover {color: rgb(197, 34, 189);}
+
+/* FOR MUSIC TAB */
+
+#music_tab {color: #ff9900;}
+
+.link_div  {
+    margin: 10px 20px;
+    height: 40px;
+}
+
+.link_div h4, .link_div h4 a {
+    font-size: 12px;
+}
+
+.link_div h4 {
+    margin: 0 0 0 10px;
+}
+
+.link_div h4 a {
+    padding: 2px 4px;
+    margin: 0;background-color: black;
+    border-radius: 0;
+    transition-duration: 1s;
+}
+
+.link_div h4 a:hover{
+    color: #ff9900;
+}
+
+.song_title {
+    color: rgb(87, 87, 87);
+    margin-bottom: 10px;
+}
+
+.links {
+    margin-bottom: 30px;
+    border-bottom: 1px solid grey;
+}
+
+/* FOR GALLERY TAB*/
+
+#gallery_tab {color: rgb(0, 174, 255);}
+
+.art img {
+    width: 180px;
+    height: auto;
+    transition-duration: 1s;
+}
+
+.art p, .art img {
+    margin: 10px;
+    transition-duration: 1s;
+}
+
+.art p:hover {
+    color: rgb(0, 174, 255);
+}
+
+#artists, #koketso, #rodney {
+    margin: 20px;
+    padding: 10px;
+}
+
+.grp_two  {
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: 5px 5px 5px black;
+}
+
+.art p {
+    width: 180px;
+    font-size: 10px;
+}
+
+#one, #two {
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
+.art img:hover{width: 230px;}
+
+.art_name{margin-bottom: 10px;}
+
+.gang, #last_section {margin-bottom: 100px;}
+.apple{margin: 8px 0 0 0;padding: 0;}
+
+/* reset link*/
+
+#reset_pwd{
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    color: black;
+}
+
+#reset_pwd:hover {
+    color: grey;
+    text-decoration: underline;
+}
+
+#signup p {
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+/* Signup login only*/
+#singup_tab{
+    color: #00ff15;
+}
+
+#login_tab{
+    color: #ff008c;
+}
+
+#password_requirements li{
+    color: black;
+    font-size: 10px;
+}
+
+#password_requirements ul{
+    margin: 5px 0;
+}
+
+#password_requirements p{
+    font-size: 11px;
+    font-weight: bold;
+}
+
+#for_email_code{
+    width: 60%;
+}
+
+#email_vlabel{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#email_verification{
+    border: 1px solid black;
+    box-shadow:  0 0 3px black;
+    border-radius: 8px;
+    padding: 2px 8px;
+    margin: 10px 0 0 7px;
+    width: 45px;
+    background-color: #eeeeee;
+    height: 20px;
+}
+
+#e_submit {
+    margin-top: 10px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(0, 174, 255);
+    transition-duration: 1s;
+}
+
+#e_submit:hover {
+    background-color: rgb(0, 174, 255);
+    color: black;
+}

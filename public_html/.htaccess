@@ -1,0 +1,90 @@
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiate.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+    
+    ReWriteEngine on
+
+    # ==================HTTPS ENFORCEMENT================
+
+    ReWriteCond %{HTTPS} off [OR]
+    ReWriteCond %{HTTP_HOST} ^www\. [NC]
+    ReWriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+    ReWriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+    #====================AUTHORIZATION===================
+
+    ReWriteCond %{HTTP:Authorization} .
+    ReWriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    #==============REMOVE TRAILING SLASHES===============
+    ReWriteCond %{REQUEST_FILENAME} !-d
+    ReWriteRule ^(.*)/$ /$1 [L,R=301]
+
+    #================TO FRONT CONTROLLR==================
+    ReWriteCond %{REQUEST_FILENAME} !-d
+    ReWriteCond %{REQUEST_FILENAME} !-f
+    ReWriteRule ^ index.php [L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Refferer-Policy "strict-origin-when-cross-origin"
+
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomain" env=HTTPS
+</IfModule>
+
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(|env|log|ini|sql|json|lock|md|gitignore|yml|yaml)$">
+    Order allow,deny
+    Deny from all   
+</FilesMatch>
+
+<IfModule mod_alias.c>
+    RedirectMatch 403 ^/(app|bootstrap|config|database|node_modules|storage|tests|vendor)/
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFileByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javasript appliation/x-javascript application/json
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType appliation/pdf "access plus 1 month"
+
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+<IfModule mod_php.c>
+    php_value upload_max_filesize 64M
+    php_value post_max_size 64M
+    php_value max_execution_time 300
+    php_value max_input_time 300
+    php_value memory_limit 256M
+
+    php_flag display_errors off
+    php_value error_reporting E_ALL
+
+    php_value date.timezone "Africa/Johannesburg"
+</IfModule>
+
+ErrorDocument 403 /errors/403.html
+ErrorDocument 404 /errors/404.html
+ErrorDocument 500 /errors/500.html
